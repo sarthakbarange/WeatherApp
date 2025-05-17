@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Weather App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Fetch city-temp</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Delhi</a></li>
+              <li><a class="dropdown-item" href="#">Mumbai</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Bangalore</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link disabled">Usage Guide</a></li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input id="city" class="form-control me-2" type="search" placeholder="Search" />
+          <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <h1 class="my-4 text-center">Weather for <span id="city_name">--</span></h1>
+  <div class="container">
+    <main>
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+
+        <!-- Temperature Card -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header">
+              <h4>Temperatures</h4>
+            </div>
+            <div class="card-body">
+              <h1><span id="temp_main">--</span>°C</h1>
+              <p>Temperature is <span id="temp_desc">--</span></p>
+              <p>Min Temperature is <span id="min_temp">--</span></p>
+              <p>Max Temperature is <span id="max_temp">--</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Humidity Card -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header">
+              <h4>Humidity Info</h4>
+            </div>
+            <div class="card-body">
+              <h1><span id="humidity_main">--</span> %</h1>
+              <p>Wind Degree is <span id="wind_degrees">--</span></p>
+              <p>Feels Like <span id="feels_like">--</span></p>
+              <p>Humidity is <span id="humidity_desc">--</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wind Info Card -->
+        <div class="col">
+          <div class="card h-100 shadow-sm border-primary">
+            <div class="card-header text-bg-primary">
+              <h4>Wind Info</h4>
+            </div>
+            <div class="card-body">
+              <h1><span id="wind_speed_main">--</span> km/hr</h1>
+              <p>Wind Speed is <span id="wind_speed_desc">--</span></p>
+              <p>Sunrise Time is <span id="sunrise">--</span></p>
+              <p>Sunset Time is <span id="sunset">--</span></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <h2 class="display-6 text-center mb-4">Weather Of Other Common Places</h2>
+      <div class="table-responsive">
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th>City</th>
+              <th>Temp</th>
+              <th>Feels_like</th>
+              <th>Temp_min</th>
+              <th>Temp_max</th>
+              <th>Pressure</th>
+              <th>Humidity</th>
+              <th>Sea_Level</th>
+              <th>Ground_level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="text-start">Mumbai</th>
+              <td>34.5</td>
+              <td>37.1</td>
+              <td>31.2</td>
+              <td>36.0</td>
+              <td>1008</td>
+              <td>65</td>
+              <td>1012</td>
+              <td>1004</td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Delhi</th>
+              <td>43.2</td>
+              <td>45.5</td>
+              <td>39.8</td>
+              <td>46.0</td>
+              <td>1002</td>
+              <td>35</td>
+              <td>1005</td>
+              <td>1000</td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Kolkata</th>
+              <td>36.1</td>
+              <td>39.0</td>
+              <td>33.3</td>
+              <td>38.5</td>
+              <td>1006</td>
+              <td>75</td>
+              <td>1010</td>
+              <td>1002</td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Lucknow</th>
+              <td>40.0</td>
+              <td>42.4</td>
+              <td>37.1</td>
+              <td>43.0</td>
+              <td>1004</td>
+              <td>48</td>
+              <td>1007</td>
+              <td>1001</td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
